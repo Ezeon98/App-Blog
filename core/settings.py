@@ -4,13 +4,12 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-
 SECRET_KEY = 'django-insecure-)zk63yo-vm!z$c(auijfkvfeao*$xi9yr+qlt!=69d_^4!0tvq'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# El * Significa que permite todos los hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition123456
@@ -22,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'core',
 ]
 
 MIDDLEWARE = [
