@@ -7,5 +7,5 @@ urlpatterns = [
 
     path('', HomeView.as_view(), name='home'),
 
-    path('blog/', include('blog.urls', namespace='blog'))
+    path('blog/', include('blog.urls', namespace='blog')),
 ]
