@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p class="text-center" >Lista de Blogs</p>
+<p class="text-center underline text-2xl"  >Lista de Blogs</p>
+
+<div class="object-none object-center ">
 <br><br>
 {%for post in posts%}
+
 <a class="text-slate-400 hover:text-brown-500 text-center" href="{% url 'blog:detail' post.id %}">{{post.title}}</a><!--Using custom color-->
 <a class="text-green-500" href= "{% url 'blog:update' post.id %}">Update</a>
 <a class="text-red-500" href= "{% url 'blog:delete' post.id %}">Delete</a>
 <br>
 {%endfor%}
 <br>
+</div>
 <a href="{% url 'blog:create'%}">Create</a>
     {% endblock content %}
