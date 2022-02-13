@@ -3,16 +3,23 @@
 {% block content %}
 <p class="text-center underline text-2xl"  >Lista de Blogs</p>
 
-<div class="object-none object-center ">
 <br><br>
 {%for post in posts%}
-
-<a class="text-slate-400 hover:text-brown-500 text-center" href="{% url 'blog:detail' post.id %}">{{post.title}}</a><!--Using custom color-->
-<a class="text-green-500" href= "{% url 'blog:update' post.id %}">Update</a>
-<a class="text-red-500" href= "{% url 'blog:delete' post.id %}">Delete</a>
+<div class="grid justify-items-center">
+<div><a class="text-slate-400 hover:text-brown-500 text-center" href="{% url 'blog:detail' post.id %}">{{post.title}}</a></div><!--Using custom color-->
+<div><a class="text-regal-blue" href= "{% url 'blog:update' post.id %}">Update</a></div>
+<div><a class="text-red-500" href= "{% url 'blog:delete' post.id %}">Delete</a></div>
 <br>
+
 {%endfor%}
 <br>
+
+
+
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type = "submit" onclick="location.href='{% url 'blog:create' %}'">Create</button>
+
 </div>
-<a href="{% url 'blog:create'%}">Create</a>
-    {% endblock content %}
+
+{% endblock content %}
+
+
